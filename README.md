@@ -15,7 +15,7 @@ run "npm start"
 
 If everything goes fine, then application should run successfully.
 
-![555555](https://user-images.githubusercontent.com/97753655/180571385-137964fa-3256-42ac-85ce-1a08caf4c38c.png)
+<kbd>![555555](https://user-images.githubusercontent.com/97753655/180571385-137964fa-3256-42ac-85ce-1a08caf4c38c.png)</kbd>
 
 
 Thank you
