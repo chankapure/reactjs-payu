@@ -1,35 +1,34 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-const useForm = validate => {
+const useForm = (validate) => {
   const [inputs, setInputs] = useState({
-    firstname: "",
-    lastname: "",
-    jobtitle: "",
-    companyname: "",
-    email: "",
-    website: "",
-    phone: "",
-    mobile: "",
-    postbox: "",
-    address: "",
-    username: "",
-    password: "",
-    password2: "",
-    others: ""
+    firstname: "Steve",
+    lastname: "David",
+    email: "test@example.com",
+    phone: "9848012345",
+    postbox: "500033",
+    address1: "Street 1",
+    address2: "Street 2",
+    city: "Hyderabad",
+    state: "Telangana",
+    country: "India",
+    productInfo: "P1, P2",
+    amount: "20",
+    txnid: new Date().getTime(),
+    hash: "",
   });
 
   const [errors, setErrors] = useState({});
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setInputs({
       ...inputs,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-
+  const handleSubmit = (e) => {
+    //e.preventDefault();
     setErrors(validate(inputs));
   };
 

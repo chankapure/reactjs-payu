@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&family=Roboto&display=swap");
 
 .app {
-  margin: 100px;
-
+  margin: 25px 0px 25px 80px;
   box-sizing: border-box;
 }
 .app h1 {
@@ -10,8 +9,9 @@
   font-size: 35px;
   text-transform: uppercase;
   color: #333333;
-  margin-left: 10px;
+  margin: 0 auto;
   padding-bottom: 20px;
+  text-align: center;
 }
 .selectAll {
   width: 500px;
@@ -23,10 +23,10 @@
   object-fit: contain;
 }
 .form__row > input {
-  padding: 15px 15px;
+  padding: 15px;
   width: 45%;
   font-size: 16px;
-  margin-left: 15px;
+  margin: 5px;
   margin-bottom: 40px;
   color: #333333;
   border: 2px solid gray;
@@ -64,9 +64,13 @@ input::-webkit-inner-spin-button {
   border: 2px solid #333333;
   background-color: white;
   color: #333333;
-  float: right;
-  margin-top: 90px;
+  /* float: right; */
+  /* margin-top: 90px; */
   margin-right: 16px;
+  margin-left: 10px;
+  background-color: darkgoldenrod;
+  width: 40%;
+  margin: 0 auto;
 }
 .form__row > button:hover {
   background-color: #333333;
@@ -99,4 +103,7 @@ input.success {
   border: 2px solid rgb(15, 187, 158);
   font-family: "Roboto", sans-serif;
   transition: 0.2s ease-in-out;
+}
+input:read-only {
+  background-color: #eaeef2;
 }
