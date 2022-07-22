@@ -8,6 +8,7 @@ function Form() {
   const { handleChange, inputs, handleSubmit, errors } = useForm(validate);
 
   const [isMount, setIsMount] = React.useState(false);
+  const [hash, setHash] = React.useState("");
 
   React.useEffect(() => {
     setIsMount(true);
@@ -24,8 +25,8 @@ function Form() {
           email: inputs.email,
           udf5: "Donation Request",
         })
-        .then(console.log)
-        .catch(console.log);
+        .then((resp) => setHash(resp.data))
+        .catch((error) => console.log(error.message));
   }, [isMount]);
 
   return (
@@ -36,26 +37,13 @@ function Form() {
         method="POST"
       >
         <div className="form__row">
-          <input
-            type="text"
-            name="txnid"
-            value={inputs.txnid}
-            onChange={handleChange}
-            className={`${errors.txnid} ? "error" : "success"`}
-            onBlur={handleSubmit}
-            autoComplete="off"
-            readOnly
-          />
+          <input type="text" name="txnid" value={inputs.txnid} readOnly />
 
           <input
             type="text"
             name="hash"
             placeholder="Hash value *"
-            value={inputs.hash}
-            onChange={handleChange}
-            className={`${errors.hash} ? "error" : "success"`}
-            onBlur={handleSubmit}
-            autoComplete="off"
+            value={hash}
             readOnly
           />
           <input
