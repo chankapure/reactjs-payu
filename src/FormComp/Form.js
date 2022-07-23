@@ -5,7 +5,7 @@ import validate from "../ValidateInfo";
 import axios from "axios";
 
 function Form() {
-  const { handleChange, inputs, handleSubmit, errors } = useForm(validate);
+  const { handleChange, inputs, handleSubmit } = useForm(validate);
 
   const [isMount, setIsMount] = React.useState(false);
   const [hash, setHash] = React.useState("");
@@ -27,7 +27,7 @@ function Form() {
         })
         .then((resp) => setHash(resp.data))
         .catch((error) => console.log(error.message));
-  }, [isMount]);
+  }, [isMount, inputs]);
 
   return (
     <div className="form">
@@ -52,7 +52,6 @@ function Form() {
             placeholder="Product Info *"
             value={inputs.productInfo}
             onChange={handleChange}
-            className={`${errors.productInfo} ? "error" : "success"`}
             onBlur={handleSubmit}
             autoComplete="off"
           />
@@ -62,7 +61,6 @@ function Form() {
             placeholder="Amount *"
             value={inputs.amount}
             onChange={handleChange}
-            className={`${errors.amount} ? "error" : "success"`}
             onBlur={handleSubmit}
             autoComplete="off"
           />
@@ -74,7 +72,6 @@ function Form() {
             placeholder="First Name (in english)*"
             value={inputs.firstname}
             onChange={handleChange}
-            className={`${errors.firstname} ? "error" : "success"`}
             onBlur={handleSubmit}
             autoComplete="off"
           />
@@ -85,7 +82,6 @@ function Form() {
             placeholder="Last Name (in english)*"
             value={inputs.lastname}
             onChange={handleChange}
-            className={`${errors.lastname} ? "error" : "success"`}
             onBlur={handleSubmit}
             autoComplete="off"
           />
@@ -95,7 +91,6 @@ function Form() {
             placeholder="Email *"
             value={inputs.email}
             onChange={handleChange}
-            className={`${errors.email} ? "error" : "success"`}
             onBlur={handleSubmit}
             autoComplete="off"
           />
@@ -105,7 +100,6 @@ function Form() {
             placeholder="Phone *"
             value={inputs.phone}
             onChange={handleChange}
-            className={`${errors.phone} ? "error" : "success"`}
             onBlur={handleSubmit}
             autoComplete="off"
           />
@@ -135,7 +129,6 @@ function Form() {
             placeholder="City *"
             value={inputs.city}
             onChange={handleChange}
-            className={`${errors.city} ? "error" : "success"`}
             onBlur={handleSubmit}
             autoComplete="off"
           />
@@ -145,7 +138,6 @@ function Form() {
             placeholder="State *"
             value={inputs.state}
             onChange={handleChange}
-            className={`${errors.state} ? "error" : "success"`}
             onBlur={handleSubmit}
             autoComplete="off"
           />
@@ -155,7 +147,6 @@ function Form() {
             placeholder="Country *"
             value={inputs.country}
             onChange={handleChange}
-            className={`${errors.country} ? "error" : "success"`}
             onBlur={handleSubmit}
             autoComplete="off"
           />
@@ -165,7 +156,6 @@ function Form() {
             placeholder="ZIPCODE *"
             value={inputs.postbox}
             onChange={handleChange}
-            className={`${errors.postbox} ? "error" : "success"`}
             onBlur={handleSubmit}
             autoComplete="off"
           />
